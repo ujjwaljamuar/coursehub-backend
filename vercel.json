@@ -6,11 +6,24 @@
         {
             "src": "/(.*)",
             "dest": "server.js",
-            "headers": {
-                "Access-Control-Allow-Origin": "https://coursehub-frontend.vercel.app",
-                "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE",
-                "Access-Control-Allow-Credentials": "true"
-            }
+            "headers": [
+                {
+                    "key": "Access-Control-Allow-Origin",
+                    "value": "https://coursehub-frontend.vercel.app"
+                },
+                {
+                    "key": "Access-Control-Allow-Methods",
+                    "value": "GET,POST,PUT,DELETE,OPTIONS"
+                },
+                {
+                    "key": "Access-Control-Allow-Headers",
+                    "value": "*"
+                },
+                {
+                    "key": "Access-Control-Allow-Credentials",
+                    "value": "true"
+                }
+            ]
         }
     ]
 }
