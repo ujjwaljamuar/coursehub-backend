@@ -1,11 +1,11 @@
 {
     "version": 2,
     "name": "coursehub-backend",
-    "builds": [{ "src": "server.js", "use": "@vercel/node" }],
+    "builds": [{ "src": "./server.js", "use": "@vercel/node" }],
     "routes": [
         {
             "src": "/(.*)",
-            "dest": "/server.js",
+            "dest": "/",
             "headers": {
                 "Access-Control-Allow-Origin": "https://coursehub-frontend.vercel.app",
                 "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE"
