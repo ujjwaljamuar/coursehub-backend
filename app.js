@@ -3,11 +3,17 @@ import { config } from "dotenv";
 import ErrorMiddleware from "./middlewares/Error.js";
 import cookieParser from "cookie-parser";
 import cors from "cors";
+import RazorPay from "razorpay";
 
 config({
     path: "./config/config.env",
 });
 const app = express();
+
+export const instance = new RazorPay({
+    key_id: process.env.RAZORPAY_API_KEY,
+    key_secret: process.env.RAZORPAY_API_SECRET,
+});
 
 // Using Middlewares
 app.use(express.json());
