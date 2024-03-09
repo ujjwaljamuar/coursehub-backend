@@ -12,6 +12,10 @@
                 "Access-Control-Allow-Headers": "Content-Type,Authorization",
                 "Access-Control-Allow-Credentials": "true"
             }
+        },
+        {
+            "src": "/api/v1/logout",
+            "headers": { "Cache-Control": "no-cache, no-store" }
         }
     ]
 }
