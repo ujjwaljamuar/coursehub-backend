@@ -16,6 +16,13 @@ export const instance = new RazorPay({
 });
 
 // Using Middlewares
+app.use((req, res, next) => {
+    res.setHeader(
+        "Cache-Control",
+        "no-cache, no-store, max-age=0, must-revalidate"
+    );
+    next();
+});
 app.use(express.json());
 app.use(
     express.urlencoded({

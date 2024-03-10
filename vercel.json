@@ -16,7 +16,9 @@
         },
         {
             "src": "/api/v1/logout",
-            "headers": { "Cache-Control": "no-cache, no-store" }
+            "headers": {
+                "Cache-Control": "no-cache, no-store, max-age=0, must-revalidate"
+            }
         }
     ]
 }
