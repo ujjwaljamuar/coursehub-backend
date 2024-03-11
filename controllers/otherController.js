@@ -12,8 +12,9 @@ export const contact = catchAsyncError(async (req, res, next) => {
   const to = process.env.MY_MAIL;
   const subject = "Contact from CourseBundler";
   const text = `I am ${name} and my Email is ${email}. \n${message}`;
+  const from = email
 
-  await sendEmail(to, subject, text);
+  await sendEmail(to, subject, text, from);
 
   res.status(200).json({
     success: true,
@@ -29,6 +30,7 @@ export const courseRequest = catchAsyncError(async (req, res, next) => {
   const to = process.env.MY_MAIL;
   const subject = "Requesting for a course on CourseBundler";
   const text = `I am ${name} and my Email is ${email}. \n${course}`;
+  const from = email
 
   await sendEmail(to, subject, text);
 
