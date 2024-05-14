@@ -1,4 +1,5 @@
 import express from "express";
+import bodyParser from "body-parser";
 import { config } from "dotenv";
 import ErrorMiddleware from "./middlewares/Error.js";
 import cookieParser from "cookie-parser";
@@ -16,6 +17,8 @@ export const instance = new RazorPay({
 });
 
 // Using Middlewares
+
+// using headers for cache control
 app.use((req, res, next) => {
     res.setHeader(
         "Cache-Control",
@@ -29,6 +32,14 @@ app.use(
         extended: true,
     })
 );
+
+app.use(
+    bodyParser.urlencoded({
+        extended: true,
+        limit: "50mb",
+    })
+);
+
 app.use(cookieParser());
 app.use(
     cors({
